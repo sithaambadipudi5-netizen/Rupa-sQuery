@@ -1,7 +1,6 @@
 import express from "express";
 import path from "path";
 import fs from "fs";
-import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 import dotenv from "dotenv";
 
@@ -619,6 +618,7 @@ Feel free to write any query in the **SQL Playground** or ask me to explain spec
 async function startServer() {
   const isProd = process.env.NODE_ENV === "production" || process.argv[1]?.endsWith("server.cjs");
   if (!isProd) {
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
