@@ -1,0 +1,6 @@
+{
+  "name": "RUPA's Query",
+  "description": "Learn SQL. Practice Queries. Track Progress. Master Databases. Interactive SQL education, playground, 200+ practice problems, quizzes, challenges, projects, and Gemini AI SQL Tutor by Ambadipudi Rupavani.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
