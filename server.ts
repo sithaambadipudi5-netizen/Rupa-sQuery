@@ -616,8 +616,19 @@ Feel free to write any query in the **SQL Playground** or ask me to explain spec
 
 // Start Express Server with Vite integration
 async function startServer() {
-  const isProd = process.env.NODE_ENV === "production" || process.argv[1]?.endsWith("server.cjs");
+  const distPath = path.join(process.cwd(), "dist");
+  const distIndexPath = path.join(distPath, "index.html");
+  const hasDist = fs.existsSync(distIndexPath);
+
+  // Development mode should ONLY be active when running via `npm run dev` or FORCE_DEV=true
+  const isDev = process.env.npm_lifecycle_event === "dev" || process.env.FORCE_DEV === "true";
+
+  // In all other cases (production, Cloud Run published app, npm start, node server.ts),
+  // if dist exists, we MUST serve the compiled production assets.
+  const isProd = (!isDev && hasDist) || process.env.NODE_ENV === "production" || process.argv[1]?.endsWith("server.cjs");
+
   if (!isProd) {
+    console.log("🛠️ Starting server in DEVELOPMENT mode with Vite middleware...");
     const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: {
@@ -628,10 +639,12 @@ async function startServer() {
     });
     app.use(vite.middlewares);
   } else {
-    const distPath = path.join(process.cwd(), "dist");
-    app.use(express.static(distPath));
+    console.log("⚡ Starting server in PRODUCTION mode (serving compiled dist)...");
+    // Serve static files from the compiled dist directory
+    app.use(express.static(distPath, { maxAge: "1d", index: false }));
+    // Serve dist/index.html for SPA routes
     app.get("*", (_req, res) => {
-      res.sendFile(path.join(distPath, "index.html"));
+      res.sendFile(distIndexPath);
     });
   }
 
@@ -639,6 +652,7 @@ async function startServer() {
     console.log(`=========================================`);
     console.log(`🚀 RUPA's Query Platform is running!`);
     console.log(`🔗 Port: ${PORT} (0.0.0.0:${PORT})`);
+    console.log(`⚡ Mode: ${isProd ? "PRODUCTION (Compiled Assets)" : "DEVELOPMENT (Vite Middleware)"}`);
     console.log(`👤 Author: Ambadipudi Rupavani`);
     console.log(`=========================================`);
   });

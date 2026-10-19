@@ -186,6 +186,22 @@ npm start
 
 ---
 
+## 🌐 Deploying to Cloud Platforms
+
+Pre-configured deployment setups and configuration files are included for all major platforms:
+
+| Platform | Type | Config File | Build Command | Start Command |
+| :--- | :--- | :--- | :--- | :--- |
+| **Render** | Full-Stack Web Service | `render.yaml` | `npm install && npm run build` | `npm start` |
+| **Railway** | Full-Stack App | Auto-detected | `npm run build` | `npm start` |
+| **Vercel** | Frontend & Serverless | `vercel.json` | `npm run build` | Static SPA (`dist`) |
+| **Netlify** | Frontend & Edge | `netlify.toml` | `npm run build` | Static SPA (`dist`) |
+| **Docker / Fly.io / Cloud Run** | Containerized | `Dockerfile` | Multi-stage build | `node dist/server.cjs` |
+
+*For detailed, step-by-step instructions and troubleshooting, see [DEPLOYMENT.md](DEPLOYMENT.md).*
+
+---
+
 ## 👤 Author Information
 
 - **Creator & Developer**: Ambadipudi Rupavani

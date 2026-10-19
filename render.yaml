@@ -2,8 +2,10 @@ services:
   - type: web
     name: rupas-query
     runtime: node
-    buildCommand: bun install && bun run build
-    startCommand: bun run start
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
+
