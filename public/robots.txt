@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://rupa-s-query-791008235723.asia-southeast1.run.app/sitemap.xml

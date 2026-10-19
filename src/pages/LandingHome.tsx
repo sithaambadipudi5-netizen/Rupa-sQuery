@@ -53,12 +53,17 @@ export const LandingHome: React.FC<LandingHomeProps> = ({ navigate, onOpenAiTuto
             
             {/* Left Headline & CTAs */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
-                Learn SQL. Practice Queries. <span className="text-indigo-600 dark:text-indigo-400">Master Databases.</span>
-              </h1>
+              <div className="space-y-2">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
+                  Rupa's Query
+                </h1>
+                <p className="text-2xl sm:text-3xl font-bold text-indigo-600 dark:text-indigo-400 tracking-tight">
+                  Learn SQL &amp; Practice Queries
+                </p>
+              </div>
               
               <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-                The all-in-one interactive platform for SQL beginners, aspiring data engineers, and backend developers. Practice in-browser against real SQLite schemas, conquer 200+ problem challenges, and get real-time guidance from your Gemini AI SQL Tutor.
+                The all-in-one interactive platform to learn SQL and practice SQL queries. Run queries in-browser against real database schemas, conquer 200+ practice challenges, master relational databases through structured courses, and get real-time guidance from your Gemini AI SQL Tutor.
               </p>
 
               {/* Action Buttons */}

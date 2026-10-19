@@ -625,6 +625,33 @@ async function startServer() {
 
   // In all other cases (production, Cloud Run published app, npm start, node server.ts),
   // if dist exists, we MUST serve the compiled production assets.
+  // Google Search Console Verification Endpoint (Task 1)
+  app.get("/google36840834d382036d.html", (_req, res) => {
+    res.setHeader("Content-Type", "text/html; charset=utf-8");
+    res.send("google-site-verification: google36840834d382036d.html\n");
+  });
+
+  // Crawlers & Search Engine Robots (Task 2)
+  app.get("/robots.txt", (_req, res) => {
+    res.setHeader("Content-Type", "text/plain; charset=utf-8");
+    const robotsPath = path.join(process.cwd(), "public", "robots.txt");
+    if (fs.existsSync(robotsPath)) {
+      return res.sendFile(robotsPath);
+    }
+    res.send("User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api/\n\nSitemap: https://rupa-s-query-791008235723.asia-southeast1.run.app/sitemap.xml\n");
+  });
+
+  // XML Sitemap for Google Indexing (Task 2)
+  app.get("/sitemap.xml", (_req, res) => {
+    res.setHeader("Content-Type", "application/xml; charset=utf-8");
+    const sitemapPath = path.join(process.cwd(), "public", "sitemap.xml");
+    if (fs.existsSync(sitemapPath)) {
+      return res.sendFile(sitemapPath);
+    }
+    res.status(404).send("<error>Sitemap not found</error>");
+  });
+
+  // Determine environment
   const isProd = (!isDev && hasDist) || process.env.NODE_ENV === "production" || process.argv[1]?.endsWith("server.cjs");
 
   if (!isProd) {

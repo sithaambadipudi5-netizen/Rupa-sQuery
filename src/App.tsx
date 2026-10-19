@@ -24,11 +24,76 @@ import { AboutAuthorView } from './pages/AboutAuthorView';
 import { LoginView } from './pages/LoginView';
 import { RegisterView } from './pages/RegisterView';
 import { FeedbackView } from './pages/FeedbackView';
+import { useSEO } from './hooks/useSEO';
+
+const ROUTE_SEO: Record<string, { title: string; description: string }> = {
+  '/': {
+    title: "Rupa's Query | SQL Learning and Practice",
+    description: "Learn SQL and practice SQL queries with Rupa's Query. Master relational databases through interactive challenges, real-world schemas, structured courses, and AI tutoring."
+  },
+  '/courses': {
+    title: "SQL Courses & Curriculum | RUPA's Query",
+    description: "Structured SQL learning path from database fundamentals to advanced joins, window functions, indexing, and query optimization."
+  },
+  '/practice': {
+    title: "200+ Interactive SQL Practice Challenges | RUPA's Query",
+    description: "Solve interactive SQL practice problems with instant query validation and execution against real database schemas."
+  },
+  '/playground': {
+    title: "Interactive SQL Playground & Query Sandbox | RUPA's Query",
+    description: "Run custom SQL queries in your browser with SQLite WebAssembly. Test schemas, joins, aggregates, and subqueries with instant results."
+  },
+  '/quizzes': {
+    title: "Interactive SQL Quizzes & Assessments | RUPA's Query",
+    description: "Test your SQL knowledge with quizzes covering DDL, DML, joins, grouping, aggregation, and subqueries."
+  },
+  '/projects': {
+    title: "Real-World SQL Projects & Database Case Studies | RUPA's Query",
+    description: "Hands-on database projects including e-commerce analytics, hospital management, and financial reporting databases."
+  },
+  '/interview': {
+    title: "SQL Interview Preparation & Technical Questions | RUPA's Query",
+    description: "Master top technical database interview questions, tricky SQL query scenarios, performance optimization, and case studies."
+  },
+  '/cheatsheet': {
+    title: "SQL Syntax Cheat Sheet & Reference Guide | RUPA's Query",
+    description: "Quick SQL syntax reference covering SELECT, JOIN, WHERE, GROUP BY, HAVING, WINDOW functions, and common database operations."
+  },
+  '/roadmap': {
+    title: "SQL Learning Roadmap: Beginner to Database Master | RUPA's Query",
+    description: "Step-by-step developer roadmap to mastering SQL, database architecture, relational design, and performance tuning."
+  },
+  '/about': {
+    title: "About Ambadipudi Rupavani | RUPA's Query Author",
+    description: "Learn about Ambadipudi Rupavani, database educator, software engineer, and the mission behind RUPA's Query."
+  },
+  '/feedback': {
+    title: "Community Feedback & Contact | RUPA's Query",
+    description: "Share feedback, report issues, and suggest new SQL learning features for RUPA's Query."
+  },
+  '/login': {
+    title: "Sign In | RUPA's Query",
+    description: "Sign in to RUPA's Query to sync your learning progress, notes, and bookmarks."
+  },
+  '/register': {
+    title: "Create Account | RUPA's Query",
+    description: "Create an account on RUPA's Query to start learning SQL and tracking achievements."
+  }
+};
 
 const MainApp: React.FC = () => {
   // Path state with browser history synchronization
   const [currentPath, setCurrentPath] = useState<string>(() => {
     return window.location.pathname || '/';
+  });
+
+  // Dynamic route-specific SEO management
+  const rootRoute = '/' + (currentPath.split('?')[0].split('/')[1] || '');
+  const activeSeo = ROUTE_SEO[rootRoute] || ROUTE_SEO['/'];
+  useSEO({
+    title: activeSeo.title,
+    description: activeSeo.description,
+    path: rootRoute === '/' ? '' : rootRoute
   });
 
   // AI Tutor drawer state
