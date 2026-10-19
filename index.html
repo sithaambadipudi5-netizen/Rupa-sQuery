@@ -9,6 +9,14 @@
     <meta property="og:description" content="Learn SQL. Practice Queries. Track Progress. Master Databases. Interactive SQL education, playground, 200+ practice problems, quizzes, challenges, projects, and Gemini AI SQL Tutor." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      // Gracefully prevent unhandled rejections from sandbox iframe WebSocket disconnects
+      window.addEventListener('unhandledrejection', function (event) {
+        if (event.reason && typeof event.reason.message === 'string' && event.reason.message.toLowerCase().includes('websocket')) {
+          event.preventDefault();
+        }
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>

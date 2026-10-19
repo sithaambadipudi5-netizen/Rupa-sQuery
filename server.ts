@@ -52,7 +52,7 @@ app.get(["/sql-wasm.wasm", "/assets/sql-wasm.wasm"], (_req, res) => {
 });
 
 // Health check
-app.get("/api/health", (_req, res) => {
+app.get(["/health", "/api/health"], (_req, res) => {
   res.json({
     status: "ok",
     app: "RUPA's Query",
@@ -620,7 +620,10 @@ async function startServer() {
   if (!isProd) {
     const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
-      server: { middlewareMode: true },
+      server: {
+        middlewareMode: true,
+        hmr: process.env.DISABLE_HMR === "true" ? false : undefined,
+      },
       appType: "spa",
     });
     app.use(vite.middlewares);
