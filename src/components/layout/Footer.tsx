@@ -51,6 +51,7 @@ export const Footer: React.FC<FooterProps> = ({ navigate, onOpenFeedback }) => {
               <li><button onClick={() => navigate('/roadmap')} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">SQL Career Roadmap</button></li>
               <li><button onClick={() => navigate('/cheatsheet')} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">SQL Syntax Cheat Sheet</button></li>
               <li><button onClick={() => navigate('/ai-tutor')} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">AI SQL Tutor (Gemini)</button></li>
+              <li><a href="/architecture-diagram.svg" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors flex items-center gap-1.5"><Terminal className="w-3 h-3 text-cyan-500" /> System Architecture</a></li>
               <li><button onClick={() => navigate('/feedback')} className="hover:text-indigo-600 dark:hover:text-indigo-400 font-semibold transition-colors flex items-center gap-1.5"><Mail className="w-3 h-3 text-indigo-500" /> Mail Feedback</button></li>
             </ul>
           </div>

@@ -1,0 +1,449 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" width="100%" height="100%" style="background:#090d16; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0d1527" />
+      <stop offset="100%" stop-color="#070a12" />
+    </linearGradient>
+
+    <!-- Card Gradients -->
+    <linearGradient id="clientGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9" />
+    </linearGradient>
+    <linearGradient id="serverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e38" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#111126" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e2a36" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#081820" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a1e17" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#19110d" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="wasmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#022c22" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Accent Lines -->
+    <linearGradient id="cyanLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="purpleLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <linearGradient id="amberLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+
+    <!-- Filters for Glow -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+
+    <!-- Markers -->
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#06b6d4" />
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#a855f7" />
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b" />
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+    </marker>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="820" fill="url(#bgGrad)" />
+
+  <!-- Grid Pattern Overlay -->
+  <g opacity="0.05">
+    <path d="M0 50 H1200 M0 100 H1200 M0 150 H1200 M0 200 H1200 M0 250 H1200 M0 300 H1200 M0 350 H1200 M0 400 H1200 M0 450 H1200 M0 500 H1200 M0 550 H1200 M0 600 H1200 M0 650 H1200 M0 700 H1200 M0 750 H1200" stroke="#38bdf8" stroke-width="1" />
+    <path d="M50 0 V820 M100 0 V820 M150 0 V820 M200 0 V820 M250 0 V820 M300 0 V820 M350 0 V820 M400 0 V820 M450 0 V820 M500 0 V820 M550 0 V820 M600 0 V820 M650 0 V820 M700 0 V820 M750 0 V820 M800 0 V820 M850 0 V820 M900 0 V820 M950 0 V820 M1000 0 V820 M1050 0 V820 M1100 0 V820 M1150 0 V820" stroke="#38bdf8" stroke-width="1" />
+  </g>
+
+  <!-- ==================== HEADER SECTION ==================== -->
+  <g transform="translate(40, 28)">
+    <rect x="0" y="0" width="1120" height="64" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1.5" filter="url(#shadow)" />
+    
+    <!-- Logo Badge -->
+    <rect x="18" y="14" width="36" height="36" rx="8" fill="url(#cyanLine)" />
+    <text x="36" y="38" font-size="20" font-weight="900" fill="#ffffff" text-anchor="middle">R</text>
+
+    <!-- Title & Subtitle -->
+    <text x="68" y="32" font-size="18" font-weight="700" fill="#f8fafc" letter-spacing="0.3">RUPA's Query — End-to-End System Architecture</text>
+    <text x="68" y="49" font-size="12" fill="#94a3b8">Interactive SQL Learning Platform • WebAssembly Execution • Multi-Format Document RAG • Google Gemini AI • Cloud Run</text>
+
+    <!-- Status Badges -->
+    <rect x="880" y="18" width="105" height="28" rx="6" fill="#065f46" stroke="#10b981" stroke-width="1" />
+    <circle cx="894" cy="32" r="4" fill="#34d399" />
+    <text x="906" y="37" font-size="11" font-weight="600" fill="#a7f3d0">Cloud Run Live</text>
+
+    <rect x="996" y="18" width="108" height="28" rx="6" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" />
+    <text x="1050" y="36" font-size="11" font-weight="600" fill="#c7d2fe" text-anchor="middle">v2.4.0 Production</text>
+  </g>
+
+  <!-- ==================== TIER 1: CLIENT APPLICATION ==================== -->
+  <g transform="translate(40, 108)">
+    <!-- Outer Tier Card -->
+    <rect x="0" y="0" width="320" height="670" rx="14" fill="url(#clientGrad)" stroke="#334155" stroke-width="1.5" filter="url(#shadow)" />
+    
+    <!-- Tier Header -->
+    <rect x="0" y="0" width="320" height="42" rx="14" fill="#1e293b" />
+    <rect x="14" y="13" width="16" height="16" rx="4" fill="#3b82f6" />
+    <text x="38" y="26" font-size="13" font-weight="700" fill="#f8fafc">1. CLIENT TIER (Browser Runtime)</text>
+    <text x="280" y="26" font-size="10" font-weight="600" fill="#38bdf8">React 19</text>
+
+    <!-- Sub-Box 1: UI & Presentation Modules -->
+    <g transform="translate(14, 52)">
+      <rect x="0" y="0" width="292" height="186" rx="8" fill="#0b1324" stroke="#1e293b" stroke-width="1" />
+      <text x="12" y="20" font-size="11" font-weight="700" fill="#60a5fa">Interactive UI &amp; Learning Modules</text>
+      
+      <!-- Module Pills -->
+      <g transform="translate(12, 32)">
+        <rect x="0" y="0" width="128" height="26" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="10" y="17" font-size="10" fill="#cbd5e1">12 Course Modules</text>
+        
+        <rect x="136" y="0" width="132" height="26" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="146" y="17" font-size="10" fill="#cbd5e1">200+ Practice Tasks</text>
+      </g>
+      <g transform="translate(12, 66)">
+        <rect x="0" y="0" width="128" height="26" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="10" y="17" font-size="10" fill="#cbd5e1">Interview Simulator</text>
+        
+        <rect x="136" y="0" width="132" height="26" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="146" y="17" font-size="10" fill="#cbd5e1">Schema Designer</text>
+      </g>
+      <g transform="translate(12, 100)">
+        <rect x="0" y="0" width="128" height="26" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="10" y="17" font-size="10" fill="#cbd5e1">Notes &amp; Bookmarks</text>
+        
+        <rect x="136" y="0" width="132" height="26" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="146" y="17" font-size="10" fill="#cbd5e1">Syntax Cheatsheet</text>
+      </g>
+      <g transform="translate(12, 134)">
+        <rect x="0" y="0" width="268" height="26" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="10" y="17" font-size="10" fill="#93c5fd">Editor: Syntax Highlight • Table Diff Profiler</text>
+      </g>
+    </g>
+
+    <!-- Sub-Box 2: In-Browser WASM SQL Engine (Key Differentiator) -->
+    <g transform="translate(14, 250)">
+      <rect x="0" y="0" width="292" height="150" rx="8" fill="url(#wasmGrad)" stroke="#10b981" stroke-width="1.2" />
+      <circle cx="18" cy="18" r="6" fill="#10b981" />
+      <text x="32" y="22" font-size="12" font-weight="700" fill="#a7f3d0">In-Browser SQLite WASM Engine</text>
+      <text x="12" y="44" font-size="10.5" fill="#d1fae5">Zero Backend Latency • Safe Client Sandbox</text>
+      
+      <rect x="12" y="54" width="268" height="24" rx="4" fill="#042f2e" />
+      <text x="20" y="70" font-size="10" font-family="monospace" fill="#34d399">sql.js (WebAssembly SQLite 3.x)</text>
+
+      <g transform="translate(12, 86)">
+        <text x="0" y="12" font-size="10" fill="#6ee7b7">✓ Real DDL, DML, Transactions, Joins</text>
+        <text x="0" y="28" font-size="10" fill="#6ee7b7">✓ Multi-table schemas (Company, School, Retail)</text>
+        <text x="0" y="44" font-size="10" fill="#6ee7b7">✓ Memory-isolated execution (No server queries)</text>
+      </g>
+    </g>
+
+    <!-- Sub-Box 3: Floating Document RAG Widget -->
+    <g transform="translate(14, 412)">
+      <rect x="0" y="0" width="292" height="130" rx="8" fill="#111c33" stroke="#38bdf8" stroke-width="1" />
+      <text x="12" y="20" font-size="11.5" font-weight="700" fill="#38bdf8">Floating AI Document RAG Widget</text>
+      
+      <g transform="translate(12, 34)">
+        <rect x="0" y="0" width="268" height="24" rx="4" fill="#0c172a" stroke="#1e293b" stroke-width="1" />
+        <text x="8" y="16" font-size="9.5" fill="#bae6fd">Upload: PDF • DOCX • XLSX • CSV • MD • TXT</text>
+      </g>
+      <g transform="translate(12, 66)">
+        <text x="0" y="12" font-size="10" fill="#94a3b8">• Socratic SQL Hint Generation</text>
+        <text x="0" y="28" font-size="10" fill="#94a3b8">• Multi-Turn Conversational Q&amp;A</text>
+        <text x="0" y="44" font-size="10" fill="#94a3b8">• Citation &amp; Page-Number Grounding</text>
+      </g>
+    </g>
+
+    <!-- Sub-Box 4: Client Services & Local Cache -->
+    <g transform="translate(14, 554)">
+      <rect x="0" y="0" width="292" height="98" rx="8" fill="#0b1324" stroke="#1e293b" stroke-width="1" />
+      <text x="12" y="18" font-size="11" font-weight="700" fill="#94a3b8">Client Services Layer</text>
+      
+      <g transform="translate(12, 28)">
+        <rect x="0" y="0" width="128" height="24" rx="4" fill="#1e293b" />
+        <text x="8" y="16" font-size="9.5" fill="#cbd5e1">sqlEngine.ts</text>
+        
+        <rect x="140" y="0" width="128" height="24" rx="4" fill="#1e293b" />
+        <text x="8" y="16" font-size="9.5" fill="#cbd5e1">aiService.ts</text>
+      </g>
+      <g transform="translate(12, 58)">
+        <rect x="0" y="0" width="128" height="24" rx="4" fill="#1e293b" />
+        <text x="8" y="16" font-size="9.5" fill="#cbd5e1">ragService.ts</text>
+        
+        <rect x="140" y="0" width="128" height="24" rx="4" fill="#1e293b" />
+        <text x="8" y="16" font-size="9.5" fill="#cbd5e1">storageService.ts</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== TIER 2: SERVER & API GATEWAY ==================== -->
+  <g transform="translate(390, 108)">
+    <!-- Outer Tier Card -->
+    <rect x="0" y="0" width="340" height="670" rx="14" fill="url(#serverGrad)" stroke="#475569" stroke-width="1.5" filter="url(#shadow)" />
+    
+    <!-- Tier Header -->
+    <rect x="0" y="0" width="340" height="42" rx="14" fill="#1e1e38" />
+    <rect x="14" y="13" width="16" height="16" rx="4" fill="#8b5cf6" />
+    <text x="38" y="26" font-size="13" font-weight="700" fill="#f8fafc">2. SERVER &amp; API LAYER (Node / Express)</text>
+    <text x="290" y="26" font-size="10" font-weight="600" fill="#c084fc">ESM/CJS</text>
+
+    <!-- Runtime Architecture & Dynamic Bridge -->
+    <g transform="translate(14, 52)">
+      <rect x="0" y="0" width="312" height="136" rx="8" fill="#0d0d1e" stroke="#2e2e50" stroke-width="1" />
+      <text x="12" y="20" font-size="11" font-weight="700" fill="#a78bfa">Universal Server Bridge (server.ts)</text>
+      
+      <rect x="12" y="32" width="288" height="32" rx="6" fill="#1c1a35" stroke="#4c1d95" stroke-width="1" />
+      <text x="20" y="47" font-size="9.5" font-family="monospace" fill="#c4b5fd">NODE_ENV == 'production' ?</text>
+      <text x="20" y="58" font-size="9.5" font-family="monospace" fill="#a7f3d0">→ require('./dist/server.cjs') [Fast Bundle]</text>
+
+      <rect x="12" y="72" width="288" height="32" rx="6" fill="#1c1a35" stroke="#4c1d95" stroke-width="1" />
+      <text x="20" y="87" font-size="9.5" font-family="monospace" fill="#c4b5fd">NODE_ENV == 'development' ?</text>
+      <text x="20" y="98" font-size="9.5" font-family="monospace" fill="#7dd3fc">→ import('./server/app.ts') [tsx HMR/Dev]</text>
+
+      <text x="12" y="122" font-size="10" fill="#94a3b8">Dynamic Port Binding: process.env.PORT || 8080 || 3000</text>
+    </g>
+
+    <!-- REST API Endpoints -->
+    <g transform="translate(14, 200)">
+      <rect x="0" y="0" width="312" height="226" rx="8" fill="#0d0d1e" stroke="#2e2e50" stroke-width="1" />
+      <text x="12" y="20" font-size="11.5" font-weight="700" fill="#c084fc">Express REST Controllers &amp; Routes</text>
+
+      <!-- Route 1 -->
+      <g transform="translate(12, 32)">
+        <rect x="0" y="0" width="288" height="40" rx="5" fill="#16152b" stroke="#3730a3" stroke-width="1" />
+        <rect x="8" y="10" width="38" height="20" rx="3" fill="#047857" />
+        <text x="27" y="24" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">POST</text>
+        <text x="52" y="23" font-size="10.5" font-family="monospace" fill="#f8fafc">/api/tutor/chat</text>
+        <text x="52" y="34" font-size="8.5" fill="#94a3b8">Interactive Socratic conversational tutoring</text>
+      </g>
+
+      <!-- Route 2 -->
+      <g transform="translate(12, 78)">
+        <rect x="0" y="0" width="288" height="40" rx="5" fill="#16152b" stroke="#3730a3" stroke-width="1" />
+        <rect x="8" y="10" width="38" height="20" rx="3" fill="#047857" />
+        <text x="27" y="24" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">POST</text>
+        <text x="52" y="23" font-size="10.5" font-family="monospace" fill="#f8fafc">/api/tutor/explain</text>
+        <text x="52" y="34" font-size="8.5" fill="#94a3b8">Query execution plan &amp; syntax review</text>
+      </g>
+
+      <!-- Route 3 -->
+      <g transform="translate(12, 124)">
+        <rect x="0" y="0" width="288" height="40" rx="5" fill="#16152b" stroke="#3730a3" stroke-width="1" />
+        <rect x="8" y="10" width="38" height="20" rx="3" fill="#047857" />
+        <text x="27" y="24" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">POST</text>
+        <text x="52" y="23" font-size="10.5" font-family="monospace" fill="#f8fafc">/api/rag/documents/upload</text>
+        <text x="52" y="34" font-size="8.5" fill="#94a3b8">Multi-format file upload via Multer buffer</text>
+      </g>
+
+      <!-- Route 4 -->
+      <g transform="translate(12, 170)">
+        <rect x="0" y="0" width="288" height="44" rx="5" fill="#16152b" stroke="#3730a3" stroke-width="1" />
+        <rect x="8" y="12" width="38" height="20" rx="3" fill="#047857" />
+        <text x="27" y="26" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">POST</text>
+        <text x="52" y="24" font-size="10.5" font-family="monospace" fill="#f8fafc">/api/rag/chat</text>
+        <text x="52" y="36" font-size="8.5" fill="#94a3b8">Vector retrieval + LangGraph answer flow</text>
+      </g>
+    </g>
+
+    <!-- Static Assets & SEO Handlers -->
+    <g transform="translate(14, 438)">
+      <rect x="0" y="0" width="312" height="102" rx="8" fill="#0d0d1e" stroke="#2e2e50" stroke-width="1" />
+      <text x="12" y="18" font-size="11" font-weight="700" fill="#a78bfa">Static Assets &amp; SEO Engine</text>
+
+      <g transform="translate(12, 28)">
+        <rect x="0" y="0" width="288" height="22" rx="4" fill="#16152b" />
+        <text x="8" y="15" font-size="9.5" fill="#cbd5e1">express.static('/dist') • Single Page App fallback</text>
+      </g>
+      <g transform="translate(12, 54)">
+        <rect x="0" y="0" width="288" height="22" rx="4" fill="#16152b" />
+        <text x="8" y="15" font-size="9.5" fill="#cbd5e1">Google Site Verification: /google36840834d382036d.html</text>
+      </g>
+      <g transform="translate(12, 78)">
+        <rect x="0" y="0" width="140" height="18" rx="3" fill="#16152b" />
+        <text x="6" y="13" font-size="9" fill="#94a3b8">/sitemap.xml (SEO)</text>
+        
+        <rect x="148" y="0" width="140" height="18" rx="3" fill="#16152b" />
+        <text x="6" y="13" font-size="9" fill="#94a3b8">/robots.txt (Crawlable)</text>
+      </g>
+    </g>
+
+    <!-- Cloud Run Container Box -->
+    <g transform="translate(14, 552)">
+      <rect x="0" y="0" width="312" height="102" rx="8" fill="#111c33" stroke="#3b82f6" stroke-width="1.2" />
+      <text x="12" y="18" font-size="11.5" font-weight="700" fill="#60a5fa">Google Cloud Run (Serverless Container)</text>
+      
+      <g transform="translate(12, 28)">
+        <text x="0" y="12" font-size="9.5" fill="#94a3b8">• Multi-Stage Docker Build (node:20-alpine)</text>
+        <text x="0" y="26" font-size="9.5" fill="#94a3b8">• Auto-scaling 0 → N instances with health-checks</text>
+        <text x="0" y="40" font-size="9.5" fill="#94a3b8">• Region: asia-southeast1 (High availability)</text>
+        <text x="0" y="54" font-size="9.5" fill="#94a3b8">• HTTPS TLS Termination + Managed CDN</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== TIER 3: AI & RAG INTELLIGENCE ==================== -->
+  <g transform="translate(760, 108)">
+    <!-- Outer Tier Card -->
+    <rect x="0" y="0" width="400" height="420" rx="14" fill="url(#aiGrad)" stroke="#0e7490" stroke-width="1.5" filter="url(#shadow)" />
+    
+    <!-- Tier Header -->
+    <rect x="0" y="0" width="400" height="42" rx="14" fill="#0e2a36" />
+    <rect x="14" y="13" width="16" height="16" rx="4" fill="#06b6d4" />
+    <text x="38" y="26" font-size="13" font-weight="700" fill="#f8fafc">3. AI &amp; MULTI-FORMAT RAG PIPELINE</text>
+    <text x="330" y="26" font-size="10" font-weight="600" fill="#22d3ee">LangGraph</text>
+
+    <!-- Document Processing Ingestion -->
+    <g transform="translate(14, 52)">
+      <rect x="0" y="0" width="372" height="106" rx="8" fill="#071822" stroke="#155e75" stroke-width="1" />
+      <text x="12" y="20" font-size="11" font-weight="700" fill="#22d3ee">Multi-Format Ingestion &amp; Chunking</text>
+
+      <g transform="translate(12, 32)">
+        <rect x="0" y="0" width="66" height="22" rx="4" fill="#164e63" />
+        <text x="33" y="15" font-size="9.5" fill="#e0f2fe" text-anchor="middle">PDF</text>
+        
+        <rect x="74" y="0" width="66" height="22" rx="4" fill="#164e63" />
+        <text x="107" y="15" font-size="9.5" fill="#e0f2fe" text-anchor="middle">DOCX</text>
+
+        <rect x="148" y="0" width="72" height="22" rx="4" fill="#164e63" />
+        <text x="184" y="15" font-size="9.5" fill="#e0f2fe" text-anchor="middle">XLSX/CSV</text>
+
+        <rect x="228" y="0" width="58" height="22" rx="4" fill="#164e63" />
+        <text x="257" y="15" font-size="9.5" fill="#e0f2fe" text-anchor="middle">TXT</text>
+
+        <rect x="294" y="0" width="56" height="22" rx="4" fill="#164e63" />
+        <text x="322" y="15" font-size="9.5" fill="#e0f2fe" text-anchor="middle">MD</text>
+      </g>
+
+      <g transform="translate(12, 64)">
+        <text x="0" y="12" font-size="9.5" fill="#94a3b8">• Parsers: pdf-parse • mammoth • xlsx • cheerio</text>
+        <text x="0" y="26" font-size="9.5" fill="#94a3b8">• Recursive chunker with page &amp; section header metadata</text>
+      </g>
+    </g>
+
+    <!-- Embedding & Vector Retrieval -->
+    <g transform="translate(14, 168)">
+      <rect x="0" y="0" width="372" height="114" rx="8" fill="#071822" stroke="#155e75" stroke-width="1" />
+      <text x="12" y="20" font-size="11" font-weight="700" fill="#22d3ee">Embeddings &amp; Vector Similarity Search</text>
+
+      <g transform="translate(12, 32)">
+        <rect x="0" y="0" width="168" height="32" rx="6" fill="#083344" stroke="#0891b2" stroke-width="1" />
+        <text x="84" y="17" font-size="10" font-weight="600" fill="#67e8f9" text-anchor="middle">Google GenAI Embeddings</text>
+        <text x="84" y="27" font-size="8" fill="#a5f3fc" text-anchor="middle">text-embedding-004 (768d)</text>
+
+        <rect x="180" y="0" width="168" height="32" rx="6" fill="#083344" stroke="#0891b2" stroke-width="1" />
+        <text x="264" y="17" font-size="10" font-weight="600" fill="#67e8f9" text-anchor="middle">Qdrant Cloud / Vector Cache</text>
+        <text x="264" y="27" font-size="8" fill="#a5f3fc" text-anchor="middle">Cosine Similarity &amp; Scoring</text>
+      </g>
+
+      <g transform="translate(12, 74)">
+        <text x="0" y="12" font-size="9.5" fill="#94a3b8">• Hybrid search: Dense embeddings + SQL term filtering</text>
+        <text x="0" y="26" font-size="9.5" fill="#94a3b8">• In-Memory cosine similarity fallback when offline</text>
+      </g>
+    </g>
+
+    <!-- LangGraph Reasoning & Gemini Model -->
+    <g transform="translate(14, 292)">
+      <rect x="0" y="0" width="372" height="114" rx="8" fill="#071822" stroke="#155e75" stroke-width="1" />
+      <text x="12" y="20" font-size="11" font-weight="700" fill="#22d3ee">LangGraph Agent &amp; Gemini 2.5 Flash</text>
+
+      <g transform="translate(12, 32)">
+        <rect x="0" y="0" width="348" height="30" rx="6" fill="#164e63" />
+        <text x="174" y="19" font-size="10" font-weight="600" fill="#e0f2fe" text-anchor="middle">StateGraph: Ingest → Retrieve → Grade → Generate → Verify</text>
+      </g>
+
+      <g transform="translate(12, 72)">
+        <text x="0" y="12" font-size="9.5" fill="#94a3b8">• Model: Google Gemini 2.5 Flash via @google/genai SDK</text>
+        <text x="0" y="26" font-size="9.5" fill="#34d399">• Quota Resilience: Exponential backoff + Deterministic Fallback</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== TIER 4: CLOUD PERSISTENCE & SECURITY ==================== -->
+  <g transform="translate(760, 540)">
+    <!-- Outer Tier Card -->
+    <rect x="0" y="0" width="400" height="238" rx="14" fill="url(#cloudGrad)" stroke="#b45309" stroke-width="1.5" filter="url(#shadow)" />
+    
+    <!-- Tier Header -->
+    <rect x="0" y="0" width="400" height="42" rx="14" fill="#2a1e17" />
+    <rect x="14" y="13" width="16" height="16" rx="4" fill="#f59e0b" />
+    <text x="38" y="26" font-size="13" font-weight="700" fill="#f8fafc">4. CLOUD PERSISTENCE &amp; AUTH TIER</text>
+    <text x="334" y="26" font-size="10" font-weight="600" fill="#fbbf24">Firebase</text>
+
+    <!-- Firebase Auth & Firestore -->
+    <g transform="translate(14, 52)">
+      <!-- Auth Component -->
+      <rect x="0" y="0" width="178" height="82" rx="8" fill="#18110b" stroke="#78350f" stroke-width="1" />
+      <text x="10" y="18" font-size="11" font-weight="700" fill="#f59e0b">Firebase Auth</text>
+      <text x="10" y="36" font-size="9.5" fill="#fde68a">• Google OAuth Popup</text>
+      <text x="10" y="52" font-size="9.5" fill="#fde68a">• Email / Password</text>
+      <text x="10" y="68" font-size="9.5" fill="#94a3b8">• Anonymous Guest Mode</text>
+
+      <!-- Firestore Component -->
+      <rect x="190" y="0" width="182" height="82" rx="8" fill="#18110b" stroke="#78350f" stroke-width="1" />
+      <text x="10" y="18" font-size="11" font-weight="700" fill="#f59e0b" transform="translate(190,0)">Cloud Firestore</text>
+      <text x="10" y="36" font-size="9.5" fill="#fde68a" transform="translate(190,0)">• User Profile &amp; Stats</text>
+      <text x="10" y="52" font-size="9.5" fill="#fde68a" transform="translate(190,0)">• XP, Streaks &amp; Solved Tasks</text>
+      <text x="10" y="68" font-size="9.5" fill="#94a3b8" transform="translate(190,0)">• Bookmarks &amp; Notes Sync</text>
+    </g>
+
+    <!-- Security Rules & Project Config -->
+    <g transform="translate(14, 144)">
+      <rect x="0" y="0" width="372" height="80" rx="8" fill="#18110b" stroke="#78350f" stroke-width="1" />
+      <text x="12" y="18" font-size="11" font-weight="700" fill="#f59e0b">Database Instance &amp; Security Validation</text>
+
+      <g transform="translate(12, 28)">
+        <rect x="0" y="0" width="348" height="20" rx="4" fill="#291c10" />
+        <text x="8" y="14" font-size="9" font-family="monospace" fill="#fef3c7">DB: ai-studio-rupasquery-b2e31be2-ce2c-4f96-a6b7-56a75d81046a</text>
+      </g>
+      <text x="12" y="64" font-size="9.5" fill="#fcd34d">firestore.rules: Strict user-isolation validation (request.auth.uid == userId)</text>
+    </g>
+  </g>
+
+  <!-- ==================== FLOW CONNECTORS & ARROWS ==================== -->
+  <!-- Connector 1: Client to WASM Engine (Internal Browser) -->
+  <path d="M 170 238 L 170 250" stroke="#10b981" stroke-width="2" stroke-dasharray="3,3" marker-end="url(#arrowGreen)" />
+  <rect x="180" y="235" width="105" height="15" rx="3" fill="#022c22" />
+  <text x="183" y="246" font-size="8" fill="#34d399">In-Memory 0ms Query</text>
+
+  <!-- Connector 2: Client to Express Server (REST API) -->
+  <path d="M 360 300 L 390 300" stroke="#a855f7" stroke-width="2.5" marker-end="url(#arrowPurple)" />
+  <rect x="345" y="280" width="60" height="16" rx="4" fill="#2e1065" />
+  <text x="375" y="291" font-size="8.5" font-weight="700" fill="#e9d5ff" text-anchor="middle">HTTP / REST</text>
+
+  <!-- Connector 3: Express Server to AI Engine -->
+  <path d="M 730 300 L 760 300" stroke="#06b6d4" stroke-width="2.5" marker-end="url(#arrowCyan)" />
+  <rect x="715" y="280" width="60" height="16" rx="4" fill="#083344" />
+  <text x="745" y="291" font-size="8.5" font-weight="700" fill="#a5f3fc" text-anchor="middle">SDK / RPC</text>
+
+  <!-- Connector 4: Client to Firebase (Direct Auth & Firestore SDK) -->
+  <path d="M 280 652 C 280 790, 750 790, 760 670" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4" fill="none" marker-end="url(#arrowAmber)" />
+  <rect x="470" y="774" width="160" height="18" rx="4" fill="#451a03" />
+  <text x="550" y="786" font-size="9" font-weight="600" fill="#fef3c7" text-anchor="middle">Firebase SDK (Client-Direct Sync)</text>
+
+  <!-- Connector 5: Cloud Run to Server Runtime -->
+  <path d="M 545 552 L 545 540" stroke="#3b82f6" stroke-width="2" stroke-dasharray="3,3" />
+
+  <!-- Footer Metadata -->
+  <text x="40" y="805" font-size="10" fill="#64748b">Designed &amp; Architected for RUPA's Query • Ambadipudi Rupavani • Malla Reddy College of Engineering and Technology (MRCET)</text>
+  <text x="1160" y="805" font-size="10" fill="#64748b" text-anchor="end">Production URL: https://rupa-s-query-791008235723.asia-southeast1.run.app</text>
+</svg>

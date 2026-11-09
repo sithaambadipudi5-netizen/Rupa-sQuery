@@ -245,6 +245,17 @@ Email: ambadipudirupavani28@gmail.com | ambadipudirupavani17@gmail.com`;
                 <MessageSquare className="w-3.5 h-3.5" />
                 <span>Send In-App Feedback</span>
               </button>
+
+              <a
+                href="/architecture-diagram.svg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3.5 py-2 rounded-xl bg-cyan-50 dark:bg-cyan-950/80 text-cyan-700 dark:text-cyan-300 hover:bg-cyan-100 dark:hover:bg-cyan-900/60 text-xs font-bold flex items-center gap-1.5 border border-cyan-200/80 dark:border-cyan-800/80 transition-colors shadow-xs"
+                title="View Technical Architecture Diagram"
+              >
+                <Layers className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+                <span>Architecture Diagram</span>
+              </a>
             </div>
           </div>
         </div>

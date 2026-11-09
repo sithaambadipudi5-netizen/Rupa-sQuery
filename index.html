@@ -67,12 +67,26 @@
     </script>
 
     <script>
-      // Gracefully prevent unhandled rejections from sandbox iframe WebSocket disconnects
-      window.addEventListener('unhandledrejection', function (event) {
-        if (event.reason && typeof event.reason.message === 'string' && event.reason.message.toLowerCase().includes('websocket')) {
-          event.preventDefault();
+      // Gracefully suppress WebSocket disconnection notices in sandboxed iframe environments where HMR is disabled
+      (function() {
+        function isWsError(err) {
+          if (!err) return false;
+          var str = (typeof err === 'string' ? err : (err.message || err.description || '')).toLowerCase();
+          return str.indexOf('websocket') !== -1 || str.indexOf('failed to connect to websocket') !== -1;
         }
-      });
+        window.addEventListener('unhandledrejection', function(e) {
+          if (isWsError(e.reason)) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }, true);
+        window.addEventListener('error', function(e) {
+          if (isWsError(e.message) || isWsError(e.error)) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }, true);
+      })();
     </script>
   </head>
   <body>

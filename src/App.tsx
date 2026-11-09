@@ -5,6 +5,7 @@ import { Footer } from './components/layout/Footer';
 import { ToastContainer } from './components/common/ToastContainer';
 import { AiTutorChat } from './components/ai/AiTutorChat';
 import { FeedbackModal } from './components/feedback/FeedbackModal';
+import { FloatingRagAssistant } from './components/rag/FloatingRagAssistant';
 
 // Page Views
 import { LandingHome } from './pages/LandingHome';
@@ -291,6 +292,9 @@ const MainApp: React.FC = () => {
         initialError={aiContext.error}
         activeDatabase={aiContext.dbName}
       />
+
+      {/* Floating Document RAG Intelligence Assistant (Opens strictly on click) */}
+      <FloatingRagAssistant />
 
       {/* Global Toast Message Stack */}
       <ToastContainer />
